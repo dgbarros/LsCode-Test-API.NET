@@ -9,6 +9,10 @@ public class PackingService
     {
         var caixasUsadas = new List<Caixa>();
 
+        var produtodOrdenados = pedido.Produtos
+            .OrderByDescending(p => p.Dimensoes.Volume())
+            .ToList();
+
         foreach (var produto in pedido.Produtos)
         {
             bool produtoEmpacotado = false;
@@ -33,8 +37,12 @@ public class PackingService
 
                 if (!caixasQueCabem.Any())
                     throw new Exception($"Produto {produto.Nome} não cabe em nenhuma caixa disponível");
+                
+                var caixaPadrao = caixasQueCabem.First();
 
-                var novaCaixa = new Caixa(caixasUsadas.Count + 1, caixasQueCabem.First().Dimensoes);
+                var novaCaixa = new Caixa(caixasUsadas.Count + 1, caixasQueCabem.First().Dimensoes){
+                    NomeCaixa = caixaPadrao.Nome
+                };
                 novaCaixa.TentarAdicionarProduto(produto);
                 caixasUsadas.Add(novaCaixa);
             }

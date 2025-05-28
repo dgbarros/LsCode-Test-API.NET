@@ -1,0 +1,38 @@
+# Pastas de build
+bin/
+obj/
+
+# Arquivos de configuração de ambiente
+appsettings.json
+appsettings.Development.json
+appsettings.*.json
+
+# Informações de usuário e IDE
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Pastas geradas por pacotes
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+
+# Logs
+*.log
+
+# Sistema operacional
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Rider
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# Configurações do launch
+Properties/launchSettings.json

@@ -5,16 +5,22 @@ public class Caixa
     public int Id { get; set; }
     public Dimensao Dimensoes { get; set; }
     public int PedidoId { get; set; }
+    public string NomeCaixa {get; set;}
     public List<Produto> Produtos { get; set; } = new List<Produto>();
 
     private int VolumeDisponivel { get; set; }
 
-    public Caixa (){}
+    public Caixa (int id, Dimensao dimensoes){
+        Id = id;
+        Dimensoes = dimensoes;
+        NomeCaixa = $"Caixa{id}";
+    }
 
-    public Caixa(int id, Dimensao dimensoes)
+    public Caixa(int id, Dimensao dimensoes, string nome)
     {
         Id = id;
         Dimensoes = dimensoes;
+        NomeCaixa = nome;
         VolumeDisponivel = dimensoes.Volume();
     }
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\miria\\Desktop\\test-api\\LsCode-test-API.NET\\LsCode.API\\LsCode.API.csproj": {}
+    "C:\\Users\\miria\\Desktop\\test-api\\LsCode-Test-API.NET\\LsCode.API\\LsCode.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\miria\\Desktop\\test-api\\LsCode-test-API.NET\\LsCode.API\\LsCode.API.csproj": {
+    "C:\\Users\\miria\\Desktop\\test-api\\LsCode-Test-API.NET\\LsCode.API\\LsCode.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\miria\\Desktop\\test-api\\LsCode-test-API.NET\\LsCode.API\\LsCode.API.csproj",
+        "projectUniqueName": "C:\\Users\\miria\\Desktop\\test-api\\LsCode-Test-API.NET\\LsCode.API\\LsCode.API.csproj",
         "projectName": "LsCode.API",
-        "projectPath": "C:\\Users\\miria\\Desktop\\test-api\\LsCode-test-API.NET\\LsCode.API\\LsCode.API.csproj",
+        "projectPath": "C:\\Users\\miria\\Desktop\\test-api\\LsCode-Test-API.NET\\LsCode.API\\LsCode.API.csproj",
         "packagesPath": "C:\\Users\\miria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\miria\\Desktop\\test-api\\LsCode-test-API.NET\\LsCode.API\\obj\\",
+        "outputPath": "C:\\Users\\miria\\Desktop\\test-api\\LsCode-Test-API.NET\\LsCode.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\miria\\AppData\\Roaming\\NuGet\\NuGet.Config"

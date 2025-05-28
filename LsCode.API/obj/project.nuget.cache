@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kuXG3i8dUxXi1ahcvD9WENwn947WgnFPNKz4H9TnGsfoQOTLKKplb0Kaa+CqWJ2ak+VsNIt2cyab0iKlWddH1g==",
+  "dgSpecHash": "nr5yUURm1WKUyx26dlBJYEALAendHDFF6cRx6mkBRBrkgxEXAq8Yfn8U94ewC0FS04+VArHonGuexzxPqbxAXQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\miria\\Desktop\\test-api\\LsCode-test-API.NET\\LsCode.API\\LsCode.API.csproj",
+  "projectFilePath": "C:\\Users\\miria\\Desktop\\test-api\\LsCode-Test-API.NET\\LsCode.API\\LsCode.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\miria\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\miria\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
