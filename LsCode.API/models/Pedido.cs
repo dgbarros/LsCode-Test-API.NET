@@ -4,7 +4,7 @@ public class Pedido
 {
     public int Id { get; set; }
     public List<Produto> Produtos { get; set; } = new List<Produto>();
-    public List<Caixa> Caixas { get; set; }
+    public List<Caixa> Caixas { get; set; } = new List<Caixa>();
 
     public Pedido (){}
 
