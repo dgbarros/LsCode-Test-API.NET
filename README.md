@@ -20,6 +20,19 @@ Este projeto é uma API desenvolvida em ASP.NET Core para empacotar produtos em 
 
 ---
 
+## Configuração do Ambiente
+
+Antes de rodar a aplicação, configure o arquivo `appsettings.json` com os dados do seu banco de dados, na seção `ConnectionStrings`:
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Database=MeuBanco;User Id=usuario;Password=senha;"
+  }
+}
+
+```
+
 ## Como rodar o projeto com Docker Compose
 
  Clone este repositorio: 
