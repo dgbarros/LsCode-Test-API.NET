@@ -12,20 +12,20 @@ namespace LsCode.API.Controllers
 
         public EmpacotamentoController()
         {
-            _packingService = new PackingService(); 
+            _packingService = new PackingService();
         }
 
         [HttpPost("empacotar")]
-        public ActionResult<List<Caixa>> EmpacotarPedido([FromBody] Pedido pedido)
+        public ActionResult<List<RespostaEmpacotamento>> EmpacotarPedidos([FromBody] RequisicaoEmpacotamento requisicao)
         {
             try
             {
-                var caixas = _packingService.EmpacotarPedido(pedido);
-                return Ok(caixas);
+                var resposta = _packingService.EmpacotarPedidos(requisicao.Pedidos);
+                return Ok(resposta);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new { erro = ex.Message });
             }
         }
     }

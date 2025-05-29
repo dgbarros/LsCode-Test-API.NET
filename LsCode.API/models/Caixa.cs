@@ -9,11 +9,15 @@ public class Caixa
     public List<Produto> Produtos { get; set; } = new List<Produto>();
 
     private int VolumeDisponivel { get; set; }
+    public object Dimensoes_Altura { get; internal set; }
 
-    public Caixa (int id, Dimensao dimensoes){
+    public Caixa() { }
+    public Caixa(int id, Dimensao dimensoes)
+    {
         Id = id;
         Dimensoes = dimensoes;
         NomeCaixa = $"Caixa{id}";
+        VolumeDisponivel = dimensoes.Volume();
     }
 
     public Caixa(int id, Dimensao dimensoes, string nome)

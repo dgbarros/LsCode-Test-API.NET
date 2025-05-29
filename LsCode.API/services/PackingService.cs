@@ -37,12 +37,11 @@ public class PackingService
 
                 if (!caixasQueCabem.Any())
                     throw new Exception($"Produto {produto.Nome} não cabe em nenhuma caixa disponível");
-                
+
                 var caixaPadrao = caixasQueCabem.First();
 
-                var novaCaixa = new Caixa(caixasUsadas.Count + 1, caixasQueCabem.First().Dimensoes){
-                    NomeCaixa = caixaPadrao.Nome
-                };
+                var novaCaixa = new Caixa(caixasUsadas.Count + 1, caixaPadrao.Dimensoes, caixaPadrao.Nome);
+                
                 novaCaixa.TentarAdicionarProduto(produto);
                 caixasUsadas.Add(novaCaixa);
             }
@@ -50,4 +49,35 @@ public class PackingService
 
         return caixasUsadas;
     }
-}
+            public List<RespostaEmpacotamento> EmpacotarPedidos(List<Pedido> pedidos)
+        {
+            var resposta = new List<RespostaEmpacotamento>();
+            int pedidoId = 1;
+
+        foreach (var pedido in pedidos)
+        {
+
+            foreach (var produto in pedido.Produtos)
+             {
+
+                var caixas = EmpacotarPedido(pedido);
+
+                resposta.Add(new RespostaEmpacotamento
+                {
+                    PedidoId = pedidoId++,
+                    Caixas = caixas.Select(c => new CaixaResposta
+                    {
+                        Id = c.Id,
+                        NomeCaixa = c.NomeCaixa,
+                        Dimensoes = c.Dimensoes,
+                        Produtos = c.Produtos
+                    }).ToList()
+                });
+            }
+        }
+
+            return resposta;
+        }
+            
+        }
+
