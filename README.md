@@ -50,6 +50,54 @@ Após clonar o repostório, construa e suba os containers usando:
 
 Dotnet run  
 
+## Exemplo de JSON para requisição no Swagger
+
+A API espera que o corpo da requisição seja um JSON contendo uma lista de pedidos, onde cada pedido tem um `pedidoId` e uma lista de `produtos`. Cada produto deve conter um `id`, `nome` e suas `dimensoes` (altura, largura e comprimento em centímetros).
+
+Formato esperado para o corpo da requisição:
+
+```json
+[
+  {
+    "pedidoId": 1,
+    "produtos": [
+      {
+        "id": 1,
+        "nome": "Controle",
+        "dimensoes": {
+          "altura": 80,
+          "largura": 49,
+          "comprimento": 39
+        }
+      },
+      {
+        "id": 2,
+        "nome": "Cabo HDMI",
+        "dimensoes": {
+          "altura": 5,
+          "largura": 5,
+          "comprimento": 15
+        }
+      }
+    ]
+  },
+  {
+    "pedidoId": 2,
+    "produtos": [
+      {
+        "id": 3,
+        "nome": "Teclado Gamer",
+        "dimensoes": {
+          "altura": 30,
+          "largura": 40,
+          "comprimento": 80
+        }
+      }
+    ]
+  }
+]
+
+
 
 
 
