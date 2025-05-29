@@ -20,6 +20,15 @@ namespace LsCode.API.Controllers
         {
             try
             {
+
+                var pedidos = requisicao.Pedidos.Select(p => new Pedido
+            {
+                Produtos = p.Produtos.Select(prod => new Produto
+                {
+                    Nome = prod.Nome,
+                    Dimensoes = prod.Dimensoes
+                }).ToList()
+            }).ToList();
                 var resposta = _packingService.EmpacotarPedidos(requisicao.Pedidos);
                 return Ok(resposta);
             }

@@ -9,7 +9,7 @@ public class Caixa
     public List<Produto> Produtos { get; set; } = new List<Produto>();
 
     private int VolumeDisponivel { get; set; }
-    public object Dimensoes_Altura { get; internal set; }
+    public decimal Dimensoes_Altura { get; internal set; }
 
     public Caixa() { }
     public Caixa(int id, Dimensao dimensoes)

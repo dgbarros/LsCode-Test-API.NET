@@ -1,4 +1,7 @@
+using LsCode.API.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using SeuProjeto.Data; // ajuste o namespace conforme o seu projeto
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,20 +10,38 @@ using System.Linq;
 public class PedidoController : ControllerBase
 {
     private readonly PackingService _packingService;
+    private readonly AppDbContext _context;
 
-    public PedidoController()
+    public PedidoController(AppDbContext context)
     {
         _packingService = new PackingService();
+        _context = context;
     }
 
     [HttpPost("processar")]
-    public IActionResult ProcessarPedidos([FromBody] List<Pedido> pedidos)
+    public async Task<IActionResult> ProcessarPedidos([FromBody] RequisicaoPedido requisicao)
     {
         var resultado = new List<object>();
 
-        foreach (var pedido in pedidos)
+        foreach (var pedido in requisicao.Pedidos)
         {
             var caixasUsadas = _packingService.EmpacotarPedido(pedido);
+
+            // Adiciona pedido ao contexto
+            _context.Pedidos.Add(pedido);
+
+            // Atualiza o PedidoId em cada caixa e adiciona ao contexto
+            foreach (var caixa in caixasUsadas)
+            {
+                caixa.PedidoId = pedido.Id;
+                _context.Caixas.Add(caixa);
+
+                foreach (var produto in caixa.Produtos)
+                {
+                    produto.PedidoId = pedido.Id;
+                    _context.Produtos.Add(produto);
+                }
+            }
 
             resultado.Add(new
             {
@@ -37,6 +58,8 @@ public class PedidoController : ControllerBase
                 })
             });
         }
+
+        await _context.SaveChangesAsync();
 
         return Ok(resultado);
     }

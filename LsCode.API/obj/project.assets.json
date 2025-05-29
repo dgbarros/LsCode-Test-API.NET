@@ -3394,19 +3394,22 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\miria\\Desktop\\test-api\\LsCode-test-API.NET\\LsCode.API\\LsCode.API.csproj",
+      "projectUniqueName": "C:\\Users\\miria\\Desktop\\test-api\\LsCode-Test-API.NET\\LsCode.API\\LsCode.API.csproj",
       "projectName": "LsCode.API",
-      "projectPath": "C:\\Users\\miria\\Desktop\\test-api\\LsCode-test-API.NET\\LsCode.API\\LsCode.API.csproj",
+      "projectPath": "C:\\Users\\miria\\Desktop\\test-api\\LsCode-Test-API.NET\\LsCode.API\\LsCode.API.csproj",
       "packagesPath": "C:\\Users\\miria\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\miria\\Desktop\\test-api\\LsCode-test-API.NET\\LsCode.API\\obj\\",
+      "outputPath": "C:\\Users\\miria\\Desktop\\test-api\\LsCode-Test-API.NET\\LsCode.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\miria\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\miria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3419,6 +3422,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3467,7 +3475,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.410\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
       }
     }
   }
